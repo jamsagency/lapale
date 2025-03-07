@@ -1,99 +1,150 @@
 import Link from "next/link"
 import Image from "next/image"
+import Script from "next/script"
 import { Instagram, MapPin } from "lucide-react"
+import type { Metadata } from "next"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+export const metadata: Metadata = {
+  title: "Palestra Nacional de Andinismo - Argentina",
+  description: "Palestra Nacional de Andinismo en Nuñez, CABA, Argentina",
+}
 
 export default function ComingSoonPage() {
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
-      <header className="container flex h-16 items-center justify-center px-4 md:px-6">
-        <Link href="#" className="flex items-center gap-2">
-          <Image
-            src="/placeholder.svg?height=40&width=40"
-            alt="Palestra Nacional de Andinismo Logo"
-            width={40}
-            height={40}
-            className="rounded-md"
-          />
-          <span className="text-lg font-bold">Palestra Nacional de Andinismo</span>
-        </Link>
+    <div className="flex min-h-[100dvh] flex-col bg-white">
+      <Script src="https://f.convertkit.com/ckjs/ck.5.js" />
+
+      <div className="fixed top-0 left-0 right-0 w-full bg-black text-white py-2 z-50">
+        <div className="container text-center text-sm">Desde 1982, única en el mundo</div>
+      </div>
+      <header className="sticky top-8 z-40 bg-white border-b border-zinc-200">
+        <div className="container flex h-16 items-center justify-center px-4 md:px-6">
+          <Link href="#" className="text-xl font-bold tracking-tight">
+            Palestra Nacional de Andinismo
+          </Link>
+        </div>
       </header>
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center text-center">
-              <div className="space-y-8 mb-8">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Próximamente</h1>
+      <main className="flex-1 mt-8">
+        <section className="relative w-full min-h-[90vh] flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage:
+                'url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pale-hero.jpg-mYsRFDEZq3XFcqzwyakag3OJ6D76uG.jpeg")',
+            }}
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="relative z-10 container mx-auto px-4 text-center text-white">
+            <div className="space-y-8 max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-5xl font-medium tracking-tight">Sumate al newsletter de la palestra</h2>
+              <div className="mx-auto w-full max-w-md newsletter-container">
+                <form
+                  action="https://app.kit.com/forms/7772257/subscriptions"
+                  className="seva-form formkit-form"
+                  method="post"
+                  data-sv-form="7772257"
+                  data-uid="02004e4ee4"
+                  data-format="inline"
+                  data-version="5"
+                >
+                  <div data-style="clean">
+                    <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+                    <div
+                      data-element="fields"
+                      data-stacked="false"
+                      className="seva-fields formkit-fields flex flex-col sm:flex-row gap-3"
+                    >
+                      <div className="formkit-field flex-1">
+                        <input
+                          className="formkit-input w-full h-12 bg-white/20 border-white/30 text-white placeholder:text-white/70 rounded-full px-4"
+                          name="email_address"
+                          aria-label="Email Address"
+                          placeholder="Ingresa tu email"
+                          required
+                          type="email"
+                        />
+                      </div>
+                      <button
+                        data-element="submit"
+                        className="formkit-submit h-12 px-8 bg-white text-black hover:bg-white/90 rounded-full font-medium"
+                      >
+                        <div className="formkit-spinner">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                        <span>Suscribirse</span>
+                      </button>
+                    </div>
+                    <div className="formkit-powered-by-convertkit-container hidden">
+                      <a
+                        href="https://kit.com/features/forms?utm_campaign=poweredby&utm_content=form&utm_medium=referral&utm_source=dynamic"
+                        data-element="powered-by"
+                        className="formkit-powered-by-convertkit"
+                        data-variant="dark"
+                        target="_blank"
+                        rel="noreferrer nofollow"
+                      >
+                        Built with Kit
+                      </a>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <Image
-                src="/placeholder.svg?height=550&width=550"
-                width={550}
-                height={550}
-                alt="Montañismo"
-                className="aspect-video overflow-hidden rounded-xl object-cover max-w-xl w-full"
-              />
             </div>
           </div>
         </section>
 
-        <section id="subscribe" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Sumate al newsletter oficial de la palestra
-              </h2>
-            </div>
-            <div className="mx-auto w-full max-w-sm space-y-2">
-              <form className="flex flex-col gap-2 sm:flex-row">
-                <Input type="email" placeholder="Ingresa tu email" className="max-w-lg flex-1" />
-                <Button type="submit">Suscribirse</Button>
-              </form>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6 text-center">
-            <div className="flex flex-col items-center justify-center gap-10">
-              <div className="space-y-4 max-w-2xl">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+        <section id="contact" className="w-full py-24 md:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center gap-16 max-w-5xl mx-auto">
+              <div className="space-y-6 text-center">
+                <h2 className="text-3xl md:text-4xl font-medium tracking-tight">
                   Ubicada en el corazón de Nuñez, CABA
                 </h2>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-center gap-2">
-                    <MapPin className="h-5 w-5 text-primary" />
-                    <span>Miguel B. Sánchez 1050, Ciudad Autónoma de Buenos Aires, Argentina</span>
-                  </div>
+                <div className="flex items-center justify-center gap-2 text-zinc-600">
+                  <MapPin className="h-5 w-5" />
+                  <span>Miguel B. Sánchez 1050, Ciudad Autónoma de Buenos Aires, Argentina</span>
                 </div>
                 <a
                   href="https://www.instagram.com/escaladoresdelapale/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mx-auto inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  className="inline-flex h-12 items-center justify-center bg-black text-white px-8 text-sm font-medium hover:bg-zinc-800 transition-colors rounded-full"
                 >
                   <Instagram className="h-5 w-5 mr-2" />
                   <span>Seguinos en Instagram</span>
                 </a>
               </div>
-              <div className="flex flex-col items-center space-y-4 max-w-2xl w-full">
-                <Image
-                  src="/placeholder.svg?height=400&width=600"
-                  width={600}
-                  height={400}
-                  alt="Mapa de ubicación"
-                  className="w-full rounded-xl object-cover"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="overflow-hidden rounded-2xl">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lugones-vertical.jpg-sh5FHWUBYAEpYMpTornRdETm1O9HtU.jpeg"
+                    width={600}
+                    height={800}
+                    alt="Vista de la pared de escalada con múltiples escaladores"
+                    className="w-full object-cover aspect-[4/5]"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-2xl">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/y-vertical.jpg-BUIVDi0pNDP7glq9jwlId6WqE27zot.jpeg"
+                    width={600}
+                    height={800}
+                    alt="Vista en ángulo de la pared de escalada en forma de Y"
+                    className="w-full object-cover aspect-[4/5]"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <footer className="w-full border-t bg-background py-6">
+      <footer className="w-full bg-black text-white py-8">
         <div className="container flex justify-center px-4 md:px-6">
-          <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Creado por escaladores de la Palestra Nacional de Andinismo
+          <p className="text-center text-sm opacity-80">
+            &copy; {new Date().getFullYear()} Creado por escaladores de la Palestra Nacional de Andinismo y del Centro
+            Andino de Buenos Aires
           </p>
         </div>
       </footer>
